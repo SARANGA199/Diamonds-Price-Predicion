@@ -1,2 +1,2 @@
-# mobile_price_predictor
+# Diamonds-Price-Predicion
  
