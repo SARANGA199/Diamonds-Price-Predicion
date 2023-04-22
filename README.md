@@ -1,2 +1,1 @@
-# Diamonds-Price-Predicion
- 
+# Diamonds-Price-Prediction
