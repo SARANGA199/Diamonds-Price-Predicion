@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Diamond Price Predictor</title>
+  </head>
+  <body>
+    <div class="outlier">
+      <div class="backTitle">
+        <div class="title">Diamond Price Predictor</div>
+      </div>
+      <form action="/" method="POST">
+        <div class="form">
+          <div class="inputfield">
+            <label for="type">Select Algorithm</label>
+            <div class="custom_select">
+              <select name="type" id="type">
+                <option value="" selected hidden>Select</option>
+                <option value="1">Random Forest Regressor</option>
+                <option value="2">Decision Tree Regressor</option>
+                <option value="3">SVR Regressor</option>
+                <option value="4">Linear Regressor</option>
+              </select>
+            </div>
+          </div>
+          <hr class="hr1" />
+          <div class="inputfield">
+            <label for="carat">Carat (KG)</label>
+            <input class="input" type="text" name="carat" required />
+          </div>
+          <div class="inputfield">
+            <label for="cut">Cut Type</label>
+            <div class="custom_select">
+              <select name="cut" id="cut">
+                <option value="" selected hidden>Select</option>
+                <option value="0">Fair</option>
+                <option value="1">Good</option>
+                <option value="4">Very Good</option>
+                <option value="3">Premium</option>
+                <option value="2">Ideal</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label for="color">Color (worst to best => J-> D)</label>
+            <div class="custom_select">
+              <select name="color" id="color">
+                <option value="" selected hidden>Select</option>
+                <option value="0">D</option>
+                <option value="1">E</option>
+                <option value="2">F</option>
+                <option value="3">G</option>
+                <option value="4">H</option>
+                <option value="5">I</option>
+                <option value="6">J</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label for="clarity">Clarity (worst to best => (I1 -> IF))</label>
+            <div class="custom_select">
+              <select name="clarity" id="clarity">
+                <option value="" selected hidden>Select</option>
+                <option value="1">IF</option>
+                <option value="6">VVS1</option>
+                <option value="7">VVS2</option>
+                <option value="4">VS1</option>
+                <option value="5">VS2</option>
+                <option value="2">SI1</option>
+                <option value="3">SI2</option>
+                <option value="0">I1</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputfield">
+            <label for="depthPre">Total depth percentage (%) </label>
+            <input class="input" type="text" name="depthPre" required />
+          </div>
+          <div class="inputfield">
+            <label for="table">Table </label>
+            <input class="input" type="text" name="table" required />
+          </div>
+          <div class="inputfield">
+            <label for="length">Length of diamond </label>
+            <input class="input" type="text" name="length" required />
+          </div>
+          <div class="inputfield">
+            <label for="width">Width of diamond</label>
+            <input class="input" type="text" name="width" required />
+          </div>
+          <div class="inputfield">
+            <label for="depth">Depth of diamond</label>
+            <input class="input" type="text" name="depth" required />
+          </div>
+
+          <div class="inputfield">
+            <input class="btn" type="submit" value="Calculate Price" />
+          </div>
+        </div>
+      </form>
+
+      <div class="result">
+        {% if pred_value != 0%}
+        <p>Estimated Price using : $ {{pred_value}}</p>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>
