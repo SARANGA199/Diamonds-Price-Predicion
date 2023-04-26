@@ -8,8 +8,10 @@
     <title>Diamond Price Predictor</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="title">Diamond Price Predictor</div>
+    <div class="outlier">
+      <div class="backTitle">
+        <div class="title">Diamond Price Predictor</div>
+      </div>
       <form action="/" method="POST">
         <div class="form">
           <div class="inputfield">
@@ -24,8 +26,9 @@
               </select>
             </div>
           </div>
+          <hr class="hr1" />
           <div class="inputfield">
-            <label for="carat">carat (KG)</label>
+            <label for="carat">Carat (KG)</label>
             <input class="input" type="text" name="carat" required />
           </div>
           <div class="inputfield">
@@ -73,35 +76,35 @@
             </div>
           </div>
           <div class="inputfield">
-            <label for="depthPre">depth </label>
+            <label for="depthPre">Total depth percentage (%) </label>
             <input class="input" type="text" name="depthPre" required />
           </div>
           <div class="inputfield">
-            <label for="table">table </label>
+            <label for="table">Table </label>
             <input class="input" type="text" name="table" required />
           </div>
           <div class="inputfield">
-            <label for="length">length </label>
+            <label for="length">Length of diamond </label>
             <input class="input" type="text" name="length" required />
           </div>
           <div class="inputfield">
-            <label for="width">width </label>
+            <label for="width">Width of diamond</label>
             <input class="input" type="text" name="width" required />
           </div>
           <div class="inputfield">
-            <label for="depth">depth </label>
+            <label for="depth">Depth of diamond</label>
             <input class="input" type="text" name="depth" required />
           </div>
 
           <div class="inputfield">
-            <input class="btn" type="submit" value="Precict Price" />
+            <input class="btn" type="submit" value="Calculate Price" />
           </div>
         </div>
       </form>
 
       <div class="result">
-        {% if pred_value != 0 %}
-        <p>Estimated Price using {{text}} : $ {{pred_value}}</p>
+        {% if pred_value != 0%}
+        <p>Estimated Price using : $ {{pred_value}}</p>
         {% endif %}
       </div>
     </div>

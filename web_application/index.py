@@ -6,7 +6,7 @@ import numpy as np
 app = Flask(__name__)
 
 def prediction(lst,text):
-    # filename = 'model/decision_tree.pickle'
+   
     filename = 'model/{}.pickle'.format(text)
     with open(filename, 'rb') as file:
         model = pickle.load(file)
@@ -18,7 +18,7 @@ def prediction(lst,text):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    # return "Hello World"
+   
     pred_value = 0
     if request.method == 'POST':
         type = request.form['type']
@@ -62,7 +62,7 @@ def index():
         # convert text value to capital letter and remove underscore
         text = text.replace('_',' ').title()
 
-    return render_template('diamond.html', pred_value=pred_value, text=text)
+    return render_template('diamond.html', pred_value=pred_value)
 
 
 if __name__ == '__main__':
