@@ -40,4 +40,3 @@
   Programming Language : Python </br>
   Libraries : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, XGBoost, Flask </br>
   Deployment : Flask for web app, HTML/CSS for frontend </br>
-  Version Control : GitHub for code management </br>
